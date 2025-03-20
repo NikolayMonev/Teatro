@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Teatro.Models.Play>
+
+@{
+    ViewData["Title"] = "Play List";
+}
+
+<h2>Play List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Play</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var play in Model)
+        {
+            <tr>
+                <td>@play.Title</td>
+                <td>@play.Description</td>
+                <td>@play.Duration</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@play.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@play.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

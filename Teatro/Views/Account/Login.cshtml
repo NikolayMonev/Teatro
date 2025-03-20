@@ -1,0 +1,22 @@
+﻿@model Teatro.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Log In";
+}
+
+<h2>Log In</h2>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" type="password" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Log In</button>
+    <a asp-action="Register" class="btn btn-secondary">Don't have an account? Register</a>
+</form>

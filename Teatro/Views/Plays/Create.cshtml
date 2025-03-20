@@ -1,0 +1,47 @@
+﻿@model Teatro.Models.Play
+
+@{
+    ViewData["Title"] = "Create Play";
+}
+
+<h2>Create Play</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Date" class="control-label"></label>
+        <input asp-for="Date" class="form-control" type="datetime-local" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TicketsAvailable" class="control-label"></label>
+        <input asp-for="TicketsAvailable" class="form-control" type="number" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Director" class="control-label"></label>
+        <input asp-for="Director" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Location" class="control-label"></label>
+        <input asp-for="Location" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Duration" class="control-label"></label>
+        <input asp-for="Duration" class="form-control" type="number" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
